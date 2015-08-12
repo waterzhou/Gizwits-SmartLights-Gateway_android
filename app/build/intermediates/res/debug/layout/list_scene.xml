@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffcf22"
+    android:orientation="horizontal" >
+
+    <TextView
+        android:id="@+id/sceneName"
+        android:layout_width="0sp"
+        android:layout_height="fill_parent"
+        android:layout_weight="2"
+        android:gravity="center_vertical"
+        android:text="@string/title_about"
+        android:textColor="@android:color/holo_blue_dark"
+        android:layout_marginLeft="4dp"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/idDetail"
+        android:layout_width="0sp"
+        android:layout_height="fill_parent"
+        android:layout_weight="2"
+        android:gravity="center_vertical"
+        android:text="@string/title_about"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="20sp" />
+    <!--TextView
+        android:id="@+id/sceneDetail"
+        android:layout_width="0sp"
+        android:layout_height="fill_parent"
+        android:layout_weight="2"
+        android:gravity="center_vertical"
+        android:text="@string/title_about"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="20sp" /-->
+    <Button
+        android:id="@+id/ApplyButton"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:onClick="buttonSceneOnClickHandler"
+        android:text = "Apply"
+        android:textColor="@android:color/holo_blue_dark"
+        android:layout_alignParentLeft="true" />
+    <ImageButton
+        android:id="@+id/scene_remove"
+        android:layout_width="46sp"
+        android:layout_height="fill_parent"
+        android:contentDescription="@string/app_name"
+        android:onClick="removeSceneOnClickHandler"
+        android:src="@android:drawable/ic_menu_delete" />
+</LinearLayout><!-- From: file:/F:/temp/Gizwits-SmartLights_Android-master/app/src/main/res/layout/list_scene.xml -->

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/top_header_bg"
+    android:minHeight="@dimen/header_height"
+    >
+
+    <TextView
+        android:id="@+id/header_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/config_title"
+        android:textColor="@color/white"
+        android:textSize="@dimen/header_text_size"
+        android:textStyle="bold" />
+
+</RelativeLayout><!-- From: file:/F:/temp/Gizwits-SmartLights_Android-master/app/src/main/res/layout/smartconnect_headerlayout.xml -->

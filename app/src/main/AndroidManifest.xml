@@ -1,0 +1,97 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.gizwits.smartlight"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="20" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
+    <application
+        android:name="com.gizwits.framework.XpgApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.gizwits.framework.activity.FlushActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.gizwits.framework.activity.BaseActivity" 
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.gizwits.framework.activity.account.LoginActivity" 
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.gizwits.framework.activity.account.RegisterActivity" 
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.gizwits.framework.activity.account.ChangePswActivity" 
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.gizwits.framework.activity.account.ForgetPswActivity" 
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.gizwits.framework.activity.account.UserManageActivity" 
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.gizwits.framework.activity.device.DeviceListActivity"
+            android:launchMode="singleTask" 
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.gizwits.framework.activity.device.DeviceManageListActivity" 
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.gizwits.framework.activity.device.DeviceManageDetailActivity" 
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.gizwits.framework.activity.onboarding.AirlinkActivity" 
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.gizwits.framework.activity.onboarding.AutoConfigActivity" 
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.gizwits.framework.activity.onboarding.BindingDeviceActivity" 
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.gizwits.framework.activity.onboarding.SearchDeviceActivity"
+            android:launchMode="singleTask" 
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.gizwits.framework.activity.onboarding.SoftApConfigActivity" 
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.gizwits.framework.activity.help.AboutActivity" 
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.gizwits.framework.activity.help.HelpActivity" 
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="zxing.CaptureActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.gizwits.smartlight.activity.MainListActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.gizwits.smartlight.activity.AddSubDeviceActivity" 
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.gizwits.smartlight.activity.EditGroupActivity" 
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.gizwits.smartlight.activity.EditIfttt"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.gizwits.framework.activity.onboarding.AtmelSmartConfig"
+            android:screenOrientation="portrait"/>
+    </application>
+
+</manifest>

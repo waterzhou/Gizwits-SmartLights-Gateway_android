@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginTop="5dp"
+	android:layout_marginBottom="10dp"
+	android:paddingTop="14dp"
+	android:paddingRight="14dp"
+	android:paddingLeft="14dp"
+	android:paddingBottom="24dp"
+    android:background="@drawable/kuang_1"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="14dp">
+    
+    <ImageView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_add3"
+        android:layout_marginBottom="10dp"/>
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add group"
+        android:textColor="@color/white"/>
+	
+</LinearLayout>
+</FrameLayout>
+<!-- From: file:/F:/temp/Gizwits-SmartLights_Android-master/app/src/main/res/layout/item_device_add.xml -->

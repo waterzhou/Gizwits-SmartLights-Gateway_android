@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.gizwits.framework.widget.SlidingMenu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    android:descendantFocusability="afterDescendants"
+    android:scrollbars="none" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal" >
+
+        <include layout="@layout/activity_slibbar" />
+        <!-- id starts with @+id/split_conditioner_control_ -->
+
+        <RelativeLayout
+            android:id="@+id/rlControlMainPage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:visibility="visible" >
+
+            <RelativeLayout
+                android:id="@+id/rlHeader"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/top_tall" >
+
+                <ImageView
+                    android:id="@+id/ivMenu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/icon_menu" />
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/main_control_title"
+                    android:textColor="@android:color/white"
+                    android:textSize="22sp" />
+                <Button
+                    android:id="@+id/ifttt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tvTitle"
+                    android:layout_marginRight="4dp"
+                    android:text="@string/iFttt"
+                    android:background="@drawable/btn_selector"
+                    android:textColor="@color/white" />
+
+                <ImageView
+                    android:id="@+id/ivEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/icon_edit_w" />
+
+                <RelativeLayout
+                    android:id="@+id/rlAlarmTips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/tvTitle"
+                    android:gravity="center"
+                    android:visibility="gone" >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/fault_tips" />
+
+                    <TextView
+                        android:id="@+id/tvAlarmTipsCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:textColor="#006cff"
+                        android:textSize="18sp" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rlHeader" >
+                <com.gizwits.framework.widget.RefreshableListView
+                    android:id="@+id/sclContent"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:paddingLeft="18dp"
+                    android:paddingRight="18dp"
+                    android:layout_above="@+id/llFooter"
+                    android:layout_alignParentTop="true"
+					android:dividerHeight="10dp"
+					android:divider="@color/transparent"
+                    android:scrollbars="none" >
+                </com.gizwits.framework.widget.RefreshableListView>
+                
+                <LinearLayout 
+	                android:layout_width="match_parent"
+	                android:layout_height="match_parent">
+	                <Button 
+	                    android:id="@+id/black_alpha_bg"
+	                    android:layout_width="match_parent"
+	                    android:layout_height="match_parent"
+	                    android:background="@color/black"
+	                    android:visibility="gone"
+	                    android:alpha="0.7"/>
+                </LinearLayout>
+                
+                <LinearLayout
+                    android:id="@+id/llFooter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:orientation="vertical" >
+					
+                    <LinearLayout
+                        android:id="@+id/llBottom"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/tip_bottom_bg"
+                        android:orientation="vertical"
+                        android:visibility="gone" >
+                        <RelativeLayout 
+	                        android:layout_width="match_parent"
+	                        android:layout_height="wrap_content"
+	                        android:layout_marginLeft="18dp"
+	                        android:layout_marginTop="10dp"
+	                        android:gravity="center_vertical"
+	                        android:layout_marginRight="18dp">
+                            <TextView 
+                                android:id="@+id/show_led_name"
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:text="XXX"
+		                        android:textColor="@color/text_gray_s"
+		                        android:textSize="24sp"/>
+                            <TextView
+                                android:id="@+id/show_scene_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:textColor="@color/text_gray_s"
+                                android:textSize="24sp"/>
+                            <!--ImageView
+                                android:id="@+id/edit_group"
+		                        android:layout_width="wrap_content"
+		                        android:layout_height="wrap_content"
+		                        android:layout_alignParentRight="true"
+		                        android:visibility="gone"
+		                        android:src="@drawable/icon_edit"/-->
+                        </RelativeLayout>
+                        <View 
+	                        android:layout_width="match_parent"
+	                        android:layout_marginTop="10dp"
+	                        android:layout_height="1dp"
+	    					android:background="#DCDCDC"/>
+                        
+                        <TextView 
+                            android:id="@+id/btnSwitch"
+                            android:layout_width="wrap_content"
+				            android:layout_height="wrap_content"
+				            android:layout_margin="10dp"
+				            android:drawableTop="@drawable/icon_power"
+				            android:gravity="center"
+				            android:text="close"
+				            android:layout_gravity="center_horizontal"
+				            android:textColor="@color/text_blue"/>
+                        
+                        <View 
+	                        android:layout_width="match_parent"
+	                        android:layout_height="1dp"
+	    					android:background="#DCDCDC"/>
+						
+                        <RelativeLayout 
+				            android:layout_width="fill_parent"
+				            android:layout_height="50dp"
+				            android:gravity="center_vertical">
+                            <com.gizwits.framework.control.TextMoveLayout
+                                android:id="@+id/textLayout1"
+                                android:layout_width="fill_parent"
+                                android:layout_marginTop="10dp"
+                                android:layout_height="40dp" />
+                            <ImageView 
+                                android:id="@+id/i"
+                                android:layout_alignParentLeft="true"
+					            android:layout_width="wrap_content"
+					            android:layout_height="wrap_content"
+					            android:layout_marginLeft="4dp"
+					            android:src="@drawable/icon_light"/>
+					        <SeekBar
+					            android:id="@+id/sbLightness"
+					            android:layout_width="match_parent"
+					            android:layout_height="wrap_content"
+					            android:layout_toLeftOf="@+id/j"
+                                android:layout_toRightOf="@+id/i"
+                                android:progressDrawable="@drawable/main_seekbar"
+                                android:thumb="@drawable/hua_thumb"
+					            android:max="254"/>
+                            <ImageView 
+                                android:id="@+id/j"
+                                android:layout_alignParentRight="true"
+					            android:layout_width="wrap_content"
+					            android:layout_height="wrap_content"
+					            android:layout_marginRight="4dp"
+					            android:src="@drawable/icon_light"/>
+				        </RelativeLayout>
+                        <RelativeLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dp"
+                            android:gravity="center_vertical">
+                            <com.gizwits.framework.control.TextMoveLayout
+                                android:id="@+id/textLayout2"
+                                android:layout_width="fill_parent"
+                                android:layout_marginTop="20dp"
+                                android:layout_height="40dp" />
+                            <ImageView
+                                android:id="@+id/k"
+                                android:layout_alignParentLeft="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="4dp"
+                                android:src="@drawable/icon_color"/>
+                            <com.gizwits.framework.control.ColorSelectSeekBar
+                                android:id="@+id/sbcolor"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:max="@integer/max_hue"
+                                android:layout_toLeftOf="@+id/l"
+                                android:layout_toRightOf="@+id/k"
+                                android:layout_marginBottom="4dp"
+                                android:layout_marginLeft="6dp"
+                                android:layout_marginRight="6dp"
+                                android:progress="0" />
+                            <ImageView
+                                android:id="@+id/l"
+                                android:layout_alignParentRight="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="4dp"
+                                android:src="@drawable/icon_color"/>
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center_vertical">
+                            <com.gizwits.framework.control.TextMoveLayout
+                                android:id="@+id/textLayout3"
+                                android:layout_width="fill_parent"
+                                android:layout_marginTop="10dp"
+                                android:layout_height="40dp" />
+                            <ImageView
+                                android:id="@+id/m"
+                                android:layout_alignParentLeft="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="4dp"
+                                android:src="@drawable/icon_saturation"/>
+                            <SeekBar
+                                android:id="@+id/sbSaturation"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_toLeftOf="@+id/n"
+                                android:layout_toRightOf="@+id/m"
+                                android:progressDrawable="@drawable/main_seekbar"
+                                android:thumb="@drawable/hua_thumb"
+                                android:max="254"/>
+                            <ImageView
+                                android:id="@+id/n"
+                                android:layout_alignParentRight="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="4dp"
+                                android:src="@drawable/icon_saturation"/>
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:id="@+id/relativeLayout2"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content">
+                            <EditText
+                                android:id="@+id/scene_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:hint="Scene Name"
+                                android:textColorHint="@color/background_blue"
+                                android:textColor="@color/blue_text_color"
+                                android:paddingLeft="10dp"
+                                android:selectAllOnFocus="true"
+                                android:inputType="text"
+                                android:maxLength="8" />
+                            <Button
+                                android:id="@+id/btn_addscene"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/AddScene"
+                                android:background="@drawable/btn_selector"
+                                android:layout_toRightOf="@+id/scene_name"
+                                android:layout_marginRight="5dp"
+                                android:layout_marginBottom="10dp"
+                                android:textColor="@color/white" />
+                            <ListView
+                                android:id="@+id/listView_Scene"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                tools:listitem="@layout/list_scene"
+                                android:layout_below="@+id/btn_addscene"/>
+                        </RelativeLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</com.gizwits.framework.widget.SlidingMenu>

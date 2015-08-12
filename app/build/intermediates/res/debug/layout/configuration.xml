@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@android:style/Theme.NoTitleBar.Fullscreen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_style_tiled">
+    <include
+        android:id="@+id/smart_connect_config_header_view"
+        layout="@layout/smartconnect_headerlayout" />
+    <LinearLayout
+        android:id="@+id/cofig_topbarRootview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/smart_connect_config_header_view"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/min_margin_cutoff"
+        android:background="@drawable/custom_table_row"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/footer_height"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/config_ssid_label"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/min_margin_cutoff"
+                android:layout_weight="1"
+                android:text="@string/ssid_label"
+                android:textColor="@color/black"
+                android:textSize="@dimen/rowitem_text_size"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/config_ssid_input"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/min_margin_cutoff"
+                android:layout_marginRight="50dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="@string/ssid_label"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:drawableLeft="@drawable/login_icon_name"
+                android:textSize="@dimen/rowitem_text_size" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/min_divider_height"
+            android:background="@color/grey_background" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/footer_height"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/config_passwd_label"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/min_margin_cutoff"
+                android:text="@string/password_name"
+                android:textColor="@color/black"
+                android:textSize="@dimen/rowitem_text_size"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/config_passwd_input"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="@string/password_hint"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:drawableLeft="@drawable/login_icon_key"
+                android:textSize="@dimen/rowitem_text_size" />
+
+            <ToggleButton
+                android:id="@+id/tbPswFlag"
+                android:layout_width="50dp"
+                android:layout_height="24dp"
+                android:background="@drawable/toggle_selector"
+                android:textOff=""
+                android:layout_gravity="center_vertical"
+                android:textOn="" />
+            <!--CheckBox android:id="@+id/cb"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="3dp"
+                /-->
+            <!--Button
+                android:id="@+id/clear_txt"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="3dp"
+                android:background="@drawable/ic_backspace_black_18dp" /-->
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/min_divider_height"
+            android:background="@color/grey_background" />
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/min_divider_height"
+            android:background="@color/grey_background" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/footer_height"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/config_key_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/min_margin_cutoff"
+                android:layout_weight="1"
+                android:text="@string/key_label"
+                android:textColor="@color/black"
+                android:textSize="@dimen/rowitem_text_size"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/Spinner01"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"></Spinner>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/config_footerview"
+        android:layout_below="@+id/cofig_topbarRootview"
+        android:layout_marginLeft="@dimen/max_margin_size"
+        android:layout_marginRight="@dimen/max_margin_size">
+
+        <Button
+            android:id="@+id/config_change_button"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_selector"
+            android:gravity="center"
+            android:minHeight="@dimen/header_height"
+            android:text="@string/change_label"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/config_start_button"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/btn_selector"
+            android:gravity="center"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:minHeight="@dimen/header_height"
+            android:text="@string/start_label"
+            android:textColor="@color/white" />
+
+        <ProgressBar
+            android:id="@+id/config_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/min_margin_cutoff"
+            android:indeterminateDrawable="@drawable/progress_drawable"
+            android:visibility="invisible" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/config_footerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/top_header_bg">
+
+        <TextView
+            android:id="@+id/TextView01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_weight="1"
+            android:autoLink="web"
+            android:gravity="center"
+            android:text="www.atmel.com"
+            android:textColor="@color/black"
+            android:textColorLink="@color/grey_text_color"
+            android:textSize="@dimen/rowitem_text_size"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+</RelativeLayout><!-- From: file:/F:/temp/Gizwits-SmartLights_Android-master/app/src/main/res/layout/configuration.xml -->

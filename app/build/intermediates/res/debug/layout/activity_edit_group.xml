@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3397CD"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/rlTop"
+        style="@style/TopLayout" >
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:padding="10dp"
+            android:src="@drawable/return_icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Smart Bulb"
+            android:textColor="@android:color/white"
+            android:textSize="22sp" />
+
+        <ImageView
+            android:id="@+id/ivConfirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:padding="10dp"
+            android:src="@drawable/icon_confirm" />
+    </RelativeLayout>
+
+    <TextView 
+        android:layout_below="@id/rlTop"
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose bulbs"
+        android:textSize="14sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="18dp"
+        android:textColor="@color/white"/>
+    
+    <View 
+        android:layout_below="@id/tv"
+        android:id="@+id/v_line"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="10dp"
+        android:background="@color/white"/>
+    
+    <HorizontalScrollView
+        android:id="@+id/hsv_led"
+        android:layout_below="@id/v_line"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="6dp"
+        android:paddingRight="24dp"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:id="@+id/ll_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bulb0000"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:visibility="invisible"
+                android:drawableTop="@drawable/lampw_framew_b" />
+        </LinearLayout>
+    </HorizontalScrollView>
+    
+    
+    <ImageView 
+        android:layout_alignRight="@id/hsv_led"
+        android:layout_marginTop="128dp"
+        android:layout_marginRight="6dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_right_w"/>
+
+    <LinearLayout
+        android:layout_below="@id/hsv_led"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:orientation="vertical" >
+        <EditText 
+            android:id="@+id/et_group_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input"
+            android:layout_marginTop="15dp"
+            android:singleLine="true"
+            android:hint="Group name"
+            android:maxLength="8"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:paddingLeft="10dp"
+            android:layout_gravity="center_horizontal"/>
+        
+        <TextView 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="Members："
+	        android:textSize="14sp"
+	        android:layout_marginTop="10dp"
+	        android:layout_marginLeft="30dp"
+	        android:textColor="#707070"/>
+	    
+	    <View 
+	        android:layout_width="match_parent"
+	        android:layout_height="0.5dp"
+	        android:layout_marginLeft="20dp"
+	        android:layout_marginRight="20dp"
+	        android:background="#E7E7E7"/>
+	    
+	    <ScrollView 
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:layout_marginTop="18dp"
+	        android:layout_marginLeft="20dp"
+	        android:layout_marginRight="20dp"
+	        android:scrollbars="none">
+	        <LinearLayout
+	            android:id="@+id/ll_select_led"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="vertical" >
+	            
+	        </LinearLayout>
+	    </ScrollView>
+    </LinearLayout>
+
+</RelativeLayout><!-- From: file:/F:/temp/Gizwits-SmartLights_Android-master/app/src/main/res/layout/activity_edit_group.xml -->
