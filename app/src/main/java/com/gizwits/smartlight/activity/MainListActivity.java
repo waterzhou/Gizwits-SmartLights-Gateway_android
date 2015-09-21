@@ -1023,31 +1023,31 @@ public class MainListActivity extends BaseActivity implements OnClickListener {
         screenWidth = getWindowManager().getDefaultDisplay().getWidth();
         //For lightness
         text_light = new TextView(this);
-        text_light.setBackgroundColor(Color.rgb(245, 245, 245));
+        text_light.setBackgroundColor(Color.rgb(254, 254, 254));
         text_light.setTextColor(Color.rgb(0, 161, 229));
-        text_light.setTextSize(16);
+        text_light.setTextSize(12);
         layoutParams_light = new ViewGroup.LayoutParams(screenWidth, 50);
         textMoveLayout = (TextMoveLayout) findViewById(R.id.textLayout1);
         textMoveLayout.addView(text_light, layoutParams_light);
-        text_light.layout(0, 20, screenWidth, 80);
+        text_light.layout(0, 20, screenWidth, 40);
         //For hue
         text_hue = new TextView(this);
-        text_hue.setBackgroundColor(Color.rgb(245, 245, 245));
+        text_hue.setBackgroundColor(Color.rgb(254, 254, 254));
         text_hue.setTextColor(Color.rgb(0, 161, 229));
-        text_hue.setTextSize(16);
+        text_hue.setTextSize(12);
         layoutParams_hue = new ViewGroup.LayoutParams(screenWidth, 50);
         textMoveLayout = (TextMoveLayout) findViewById(R.id.textLayout2);
         textMoveLayout.addView(text_hue, layoutParams_hue);
-        text_hue.layout(0, 20, screenWidth, 80);
+        text_hue.layout(0, 20, screenWidth, 40);
         //For saturation
         text_saturation = new TextView(this);
-        text_saturation.setBackgroundColor(Color.rgb(245, 245, 245));
+        text_saturation.setBackgroundColor(Color.rgb(254, 254, 254));
         text_saturation.setTextColor(Color.rgb(0, 161, 229));
-        text_saturation.setTextSize(16);
+        text_saturation.setTextSize(12);
         layoutParams_saturation = new ViewGroup.LayoutParams(screenWidth, 50);
         textMoveLayout = (TextMoveLayout) findViewById(R.id.textLayout3);
         textMoveLayout.addView(text_saturation, layoutParams_saturation);
-        text_saturation.layout(0, 20, screenWidth, 80);
+        text_saturation.layout(0, 20, screenWidth, 40);
 
 
         mAdapter = new MenuDeviceAdapter(this, bindlist);
@@ -1294,8 +1294,8 @@ public class MainListActivity extends BaseActivity implements OnClickListener {
                 mView.toggle();
                 break;
             case R.id.btnSwitch:
-                //每0.6秒智能操控一次，避免频繁操控
-                if (switchTime + 600 > System.currentTimeMillis()) {
+                //每0.6秒智能操控一次，避免频繁操控--600
+                if (switchTime + 1000 > System.currentTimeMillis()) {
                     return;
                 }
                 switchTime = System.currentTimeMillis();

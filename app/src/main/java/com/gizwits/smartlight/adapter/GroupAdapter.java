@@ -525,6 +525,7 @@ public class GroupAdapter extends BaseAdapter {
             }
             if (isShowOk) {
                 mainListActivity.bottomShow();
+
             } else {
                 Toast.makeText(mainListActivity, "该组中无可用LED灯", Toast.LENGTH_SHORT).show();
             }

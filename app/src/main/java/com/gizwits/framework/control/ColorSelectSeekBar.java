@@ -14,10 +14,6 @@ import android.widget.SeekBar;
  */
 public class ColorSelectSeekBar extends SeekBar
 {
-    public float currentX = 40;
-    public float currentY = 50;
-    public int color_imageView;
-
     private Paint mFillPaint;
     private int mWidth;
     private int mHeight;
