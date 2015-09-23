@@ -14,7 +14,7 @@ import com.xtremeprog.xpgconnect.XPGWifiCentralControlDevice;
 
 public class AddSubDeviceActivity extends BaseActivity implements OnClickListener{
     private final String TAG = "AddSubDeviceActivity";
-	private static final int DELAY = 6000;
+	private static final int DELAY = 1000;
 	/** The iv back. */
 	private ImageView ivBack;
 	
@@ -87,7 +87,7 @@ public class AddSubDeviceActivity extends BaseActivity implements OnClickListene
 	public void onBackPressed() {
 		super.onBackPressed();
 		handler.removeMessages(handler_key.START.ordinal());
-		finish();
+		//finish();
 	}
 	
 	@Override

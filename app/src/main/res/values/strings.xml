@@ -97,6 +97,7 @@
 	<string name="account_manage">Account Management</string>
 	<string name="about">About</string>
 	<string name="back_to_device_list">Go back to device list</string>
+    <string name="zigbee_factory_reset">Zigbee factory reset</string>
 	<string name="softap_text1">1.请复制以下密码:</string>
 	<string name="softap_password">123456789</string>
 	<string name="softap_text2">2.请进入设置>Wi-Fi，选择XPG-GAGENT-XXXX(XXXX为本模块mac的后四位),输入刚刚复制的密码;</string>

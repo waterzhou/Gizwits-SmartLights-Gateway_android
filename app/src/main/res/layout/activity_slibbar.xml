@@ -183,19 +183,33 @@
                         android:src="@drawable/arrow_right_gray" />
                 </RelativeLayout>
 
+
                 <LinearLayout
                     android:layout_width="fill_parent"
                     android:layout_height="1dp"
                     android:background="@color/text_gray" />
+                <Button
+                    android:id="@+id/btnFactoryReset"
+                    style="@style/ButtonBlue"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="@string/zigbee_factory_reset"
+                    android:onClick="onClickSlipBar" />
 
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/text_gray" />
                 <Button
                     android:id="@+id/btnDeviceList"
                     style="@style/ButtonBlue"
-                    android:layout_marginTop="50dp"
-                    android:layout_marginBottom="50dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
                     android:text="@string/back_to_device_list"
                     android:onClick="onClickSlipBar" />
+
             </LinearLayout>
+
         </ScrollView>
     </LinearLayout>
 

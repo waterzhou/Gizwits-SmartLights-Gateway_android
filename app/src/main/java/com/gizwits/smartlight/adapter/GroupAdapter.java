@@ -264,7 +264,7 @@ public class GroupAdapter extends BaseAdapter {
                                 false, mapList.get(list.get(position)).get(i)));
                     }
                 }
-                if (list.get(position).equals("我的LED") || list.get(position).equals("MyController")) {
+               /* if (list.get(position).equals("我的LED") || list.get(position).equals("MyController")) {
                     //如果分组为我的Led灯，则放入删除按钮
                     ImageView ivX = new ImageView(mainListActivity);
                     if (mainListActivity.ivEdit.getTag().toString().equals("0")) {
@@ -280,7 +280,7 @@ public class GroupAdapter extends BaseAdapter {
                     ivX.setOnClickListener(deleteLedClick);
                     mainListActivity.ivDels.add(ivX);
                     flayout.addView(ivX);
-                }
+                }*/
                 llview.addView(flayout);
 
                 //*******************************在我的led分组中，添加add按键*****************************

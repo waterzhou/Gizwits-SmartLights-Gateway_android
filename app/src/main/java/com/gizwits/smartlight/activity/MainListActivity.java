@@ -389,6 +389,7 @@ public class MainListActivity extends BaseActivity implements OnClickListener {
          * 更新UI界面
          */
         UPDATE_UI,
+        REBOOT_MCU,
 
         /**
          * 显示警告
@@ -719,6 +720,26 @@ public class MainListActivity extends BaseActivity implements OnClickListener {
                         tvSceneName.setText(tempS.getName());
                     }
                 }
+                // Response from factory reset zigbee
+                if(mCmd[0] == 0x03 && mCmd[1] == 0x51)
+                {
+                    if (mCmd[2] == 0x01)
+                    {
+                        Log.i(TAG, "factory reset zigbee successfully");
+                        handler.sendEmptyMessage(handler_key.REBOOT_MCU.ordinal());
+                        //mCenter.cRebootGroups(setmanager.getUid(), setmanager.getToken(), Configs.PRODUCT_KEY_Sub);//获取组
+                        //mCenter.cGetSubDevicesList(centralControlDevice);
+                    }
+                }
+                if(mCmd[0] == 0x03 && mCmd[1] == 0x53)
+                {
+                    mCenter.cDisconnect(mXpgWifiDevice);
+                    DisconnectOtherDevice();
+                    IntentUtils.getInstance().startActivity(MainListActivity.this,
+                            DeviceListActivity.class);
+                    finish();
+                }
+
 
             } else {
                 MainListActivity.this.didSubReceiveData((XPGWifiSubDevice) device,
@@ -739,6 +760,10 @@ public class MainListActivity extends BaseActivity implements OnClickListener {
             super.handleMessage(msg);
             handler_key key = handler_key.values()[msg.what];
             switch (key) {
+                case REBOOT_MCU:
+                    mCenter.cRebootGroups(setmanager.getUid(), setmanager.getToken(), Configs.PRODUCT_KEY_Sub);//获取组
+
+                    break;
                 case DEVICE_GETSTATUS:
                     XPGWifiSubDevice subObj = (XPGWifiSubDevice) msg.obj;
                     mCenter.cGetSubStatus(subObj);
@@ -879,7 +904,7 @@ public class MainListActivity extends BaseActivity implements OnClickListener {
     @Override
     public void onResume() {
         super.onResume();
-        refreshMenu();
+        //refreshMenu();
         //中控监听
         Log.d(TAG, "centralControlsetListener");
         centralControlDevice = (XPGWifiCentralControlDevice) mXpgWifiDevice;
@@ -1502,6 +1527,11 @@ public class MainListActivity extends BaseActivity implements OnClickListener {
                 IntentUtils.getInstance().startActivity(MainListActivity.this,
                         DeviceListActivity.class);
                 finish();
+                break;
+            case R.id.btnFactoryReset:
+                Log.i(TAG, "Zigbee factory reset");
+                mCenter.cFactoryResetZigbee(setmanager.getUid(), setmanager.getToken(), Configs.PRODUCT_KEY_Sub);
+
                 break;
         }
     }

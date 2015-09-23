@@ -679,6 +679,35 @@ public class CmdCenter {
         }
     }
 
+    public void cRebootGroups(String uid, String token,
+                              String... specialProductKey) {
+        byte cmd = 0x52;
+        Log.i(TAG, "factory reboot zigbee control device");
+        try {
+            sendJson("group", Byte.toString(cmd));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     *  Factory reset Zigbee config
+     *
+     * @param uid               用户id
+     * @param token             授权令牌
+     * @param specialProductKey 指定productkey
+     */
+    public void cFactoryResetZigbee(String uid, String token,
+                           String... specialProductKey) {
+
+        byte cmd = 0x50;
+        Log.i(TAG, "factory reset zigbee control device");
+        try {
+            sendJson("group", Byte.toString(cmd));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
 
     public void cDeleteGroupsFromDB(String uid, String token,
                               XPGWifiGroup xpgWifiGroup) {
