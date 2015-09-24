@@ -87,7 +87,7 @@ public class AddSubDeviceActivity extends BaseActivity implements OnClickListene
 	public void onBackPressed() {
 		super.onBackPressed();
 		handler.removeMessages(handler_key.START.ordinal());
-		//finish();
+		finish();
 	}
 	
 	@Override

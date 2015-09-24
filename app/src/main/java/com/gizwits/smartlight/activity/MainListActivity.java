@@ -726,7 +726,10 @@ public class MainListActivity extends BaseActivity implements OnClickListener {
                     if (mCmd[2] == 0x01)
                     {
                         Log.i(TAG, "factory reset zigbee successfully");
-                        handler.sendEmptyMessage(handler_key.REBOOT_MCU.ordinal());
+                        ledList.clear();
+                        ControllerList.clear();
+                        showItemDevices.clear();
+                        handler.sendEmptyMessage(handler_key.UPDATE_UI.ordinal());
                         //mCenter.cRebootGroups(setmanager.getUid(), setmanager.getToken(), Configs.PRODUCT_KEY_Sub);//获取组
                         //mCenter.cGetSubDevicesList(centralControlDevice);
                     }
@@ -762,7 +765,6 @@ public class MainListActivity extends BaseActivity implements OnClickListener {
             switch (key) {
                 case REBOOT_MCU:
                     mCenter.cRebootGroups(setmanager.getUid(), setmanager.getToken(), Configs.PRODUCT_KEY_Sub);//获取组
-
                     break;
                 case DEVICE_GETSTATUS:
                     XPGWifiSubDevice subObj = (XPGWifiSubDevice) msg.obj;
@@ -904,23 +906,26 @@ public class MainListActivity extends BaseActivity implements OnClickListener {
     @Override
     public void onResume() {
         super.onResume();
-        //refreshMenu();
+        refreshMenu();
         //中控监听
         Log.d(TAG, "centralControlsetListener");
         centralControlDevice = (XPGWifiCentralControlDevice) mXpgWifiDevice;
         centralControlDevice.setListener(xpgWifiCentralControlDeviceListener);
         mCenter.cSetXPGWifiCentralControlDevice(centralControlDevice);
         mCenter.cSetDid(centralControlDevice.getDid());
-
+        // bottomClose();
+        ledList.clear();
+        ControllerList.clear();
+        showItemDevices.clear();
         //First get group information then subdeviceList
         mCenter.cGetGroups(setmanager.getUid(), setmanager.getToken(), Configs.PRODUCT_KEY_Sub);//获取组
         mCenter.cGetSubDevicesList(centralControlDevice);//获取子设备
         mCenter.cGetAllScenes(setmanager.getUid(), setmanager.getToken(), Configs.PRODUCT_KEY_Sub);//获取组
 
-        // bottomClose();
-        ledList.clear();
-        ControllerList.clear();
-        showItemDevices.clear();
+//        // bottomClose();
+//        ledList.clear();
+//        ControllerList.clear();
+//        showItemDevices.clear();
 
         //展开3秒状态获取Loadding框
         getStatusProgress.show();
