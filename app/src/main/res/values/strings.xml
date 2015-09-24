@@ -154,7 +154,7 @@
     <string name="change_label">Change target SSID      ></string>
     <string name="start_label">Start</string>
     <string name="config_title">Atmel Smart Connect</string>
-    <string name="AddScene">If you love the effect of now, click me to save it</string>
+    <string name="AddScene">Save Scene</string>
     <string name="iFttt">IFTTT</string>
     <string-array name="planets_array">
         <item>XPG-gagent-108C</item>

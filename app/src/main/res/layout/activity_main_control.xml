@@ -305,7 +305,6 @@
                                 android:textColorHint="@color/background_blue"
                                 android:textColor="@color/blue_text_color"
                                 android:paddingLeft="10dp"
-                                android:selectAllOnFocus="true"
                                 android:inputType="text"
                                 android:maxLength="8" />
                             <Button
@@ -315,7 +314,6 @@
                                 android:text="@string/AddScene"
                                 android:background="@drawable/btn_selector"
                                 android:layout_toRightOf="@+id/scene_name"
-                                android:layout_marginRight="5dp"
                                 android:layout_marginBottom="10dp"
                                 android:textColor="@color/white" />
                             <ListView

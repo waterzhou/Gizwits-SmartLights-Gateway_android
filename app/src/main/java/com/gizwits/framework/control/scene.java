@@ -30,14 +30,11 @@ public class  scene implements Serializable {
     public String getGroup() {
         return group;
     }
-    public void setGroup(String group) {
-        this.group = group;
-    }
+    public void setGroup(String group) { this.group = group; }
 
     public int getId() {
         return id;
     }
-
     public void setId(int id) {
         this.id = id;
     }
@@ -45,7 +42,6 @@ public class  scene implements Serializable {
     public String getValue() {
         return value;
     }
-
     public void setValue(String value) {
         this.value = value;
     }

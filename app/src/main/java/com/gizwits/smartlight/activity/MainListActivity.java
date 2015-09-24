@@ -704,20 +704,30 @@ public class MainListActivity extends BaseActivity implements OnClickListener {
                 if (mCmd[0] == 0x03 && mCmd[1] == 0x35) {
                     if (mCmd[3] == 0x01) {
                         Log.i(TAG, "Add scene successfully");
-                        scene tempS = new scene("", "", "", 0);
-                        tempS.setId(mCmd[2]);
-                        tempS.setGroup(selectGroup);
-                        if (tvEditSceneName.getText().toString().trim().isEmpty()) {
-                            if (scene_details.isEmpty())
-                                tempS.setName("scene0");
-                            else
-                                tempS.setName("scene" + (scene_details.size()));
-                        } else {
-                            tempS.setName(tvEditSceneName.getText().toString());
-                        }
-                        scene_details.add(tempS);
-                        handler.sendEmptyMessage(handler_key.UPDATE_UI.ordinal());
-                        tvSceneName.setText(tempS.getName());
+                        scene_details.clear();
+                        mCenter.cGetScenes(selectGroup, setmanager.getUid(),
+                                setmanager.getToken(), Configs.PRODUCT_KEY_Sub);
+//                        scene tempS = new scene("", "", "", 0);
+//                        tempS.setId(mCmd[2]);
+//                        tempS.setGroup(selectGroup);
+//                        if (tvEditSceneName.getText().toString().trim().isEmpty()) {
+//                            if (scene_details.isEmpty())
+//                                tempS.setName("scene0");
+//                            else
+//                                tempS.setName("scene" + (scene_details.size()));
+//                        } else {
+//                            tempS.setName(tvEditSceneName.getText().toString());
+//                        }
+//                        tvSceneName.setText(tempS.getName());
+//                        scene_details.add(tempS);
+//                        if (isBottomShow())
+//                            handler.sendEmptyMessage(handler_key.UPDATE_UI.ordinal());
+
+                    }
+                }
+                if (mCmd[0] == 0x03 && mCmd[1] == 0x37) {
+                    if (mCmd[3] == 0x01) {
+                        Log.i(TAG, "Delete scene successfully");
                     }
                 }
                 // Response from factory reset zigbee
@@ -730,8 +740,6 @@ public class MainListActivity extends BaseActivity implements OnClickListener {
                         ControllerList.clear();
                         showItemDevices.clear();
                         handler.sendEmptyMessage(handler_key.UPDATE_UI.ordinal());
-                        //mCenter.cRebootGroups(setmanager.getUid(), setmanager.getToken(), Configs.PRODUCT_KEY_Sub);//获取组
-                        //mCenter.cGetSubDevicesList(centralControlDevice);
                     }
                 }
                 if(mCmd[0] == 0x03 && mCmd[1] == 0x53)
