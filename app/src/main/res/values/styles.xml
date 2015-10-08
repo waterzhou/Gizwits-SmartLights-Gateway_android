@@ -74,6 +74,12 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
     </style>
+    <style name="ButtonGrayNew">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
+
     
     <style name="MenuTextViewGray">
         <item name="android:layout_height">wrap_content</item>

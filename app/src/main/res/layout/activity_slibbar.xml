@@ -190,7 +190,7 @@
                     android:background="@color/text_gray" />
                 <Button
                     android:id="@+id/btnFactoryReset"
-                    style="@style/ButtonBlue"
+                    style="@style/ButtonGrayNew"
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="20dp"
                     android:text="@string/zigbee_factory_reset"
@@ -202,7 +202,7 @@
                     android:background="@color/text_gray" />
                 <Button
                     android:id="@+id/btnDeviceList"
-                    style="@style/ButtonBlue"
+                    style="@style/ButtonGrayNew"
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="20dp"
                     android:text="@string/back_to_device_list"

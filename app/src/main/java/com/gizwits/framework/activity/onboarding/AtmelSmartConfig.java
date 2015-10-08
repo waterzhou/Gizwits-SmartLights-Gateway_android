@@ -56,7 +56,6 @@ import java.util.List;
 public class AtmelSmartConfig extends Activity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener, TextWatcher {
 
     private static final String TAG = "SmartConnect:";
-
     /**
      * The tb psw flag.
      */
@@ -83,23 +82,18 @@ public class AtmelSmartConfig extends Activity implements View.OnClickListener, 
      * field
      */
     private EditText mPasswordInputField = null;
-
-
     /**
      * The Encryption key field input field is entered by user
      */
     private EditText mKeyInputField = null;
 
-
     /* A check box which when checked sends the encryption key to server as a
     * input and checks if key is exactly 16chars
     */
     private CheckBox mconfig_key_checkbox = null;
-
     /**
      * Progressbar
      */
-    private ProgressBar mconfigProgress = null;
     private int textCount = 0;
 
 
@@ -111,24 +105,18 @@ public class AtmelSmartConfig extends Activity implements View.OnClickListener, 
      * A Dialog instance which is responsible to generate all dialogs in the app
      */
     private SmartConnectDialogManager mDialogManager = null;
-    public boolean isCalled = false;
     private ProgressDialog pd_config_refresh;
     private static AppPreferences mAppPreferences;
-    private udpbroadcast udpBroadcast;
     private UdpUnicast mUdpUnicast;
     private int mUdpPort = 48899;
     private static ConnectionHandler mConnectionHandler;
     private HandlerThread mConnectionThread;
-
     private static ATCommand mATCommand;
     private ATCommandListener mATCommandListener;
-
-
     private boolean mIsSwitching = false;
     private static String cmd;
     private static List<ScanResult> listResult;
     private int router_cypher_type;
-
     private Spinner mSpinner;
     private ArrayAdapter<CharSequence> mAdapter;
 
@@ -137,7 +125,6 @@ public class AtmelSmartConfig extends Activity implements View.OnClickListener, 
 
         public static final int MSG_CONNECT_BRIDGE_WIFI = 9;
         public static final int MSG_CONNECT_ROUTE_CMD = 11;
-        //public static final int MSG_CONFIG_ROUTER_KEY = 13;
         public static final int MSG_NODE_RESET = 14;
         public static final int MSG_CONNECT_ROUTER_WIFI = 16;
 
@@ -295,10 +282,8 @@ public class AtmelSmartConfig extends Activity implements View.OnClickListener, 
 
         public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2,
                                    long arg3) {
-
             mAppPreferences.setBridgeWiFiSSID(arg0.getItemAtPosition(arg2).toString());
         }
-
         public void onNothingSelected(AdapterView<?> arg0) {
         }
     }
@@ -342,7 +327,6 @@ public class AtmelSmartConfig extends Activity implements View.OnClickListener, 
         footerView = (RelativeLayout) findViewById(R.id.config_footerview);
         mSSIDInputField = (EditText) findViewById(R.id.config_ssid_input);
         mPasswordInputField = (EditText) findViewById(R.id.config_passwd_input);
-        mconfigProgress = (ProgressBar) findViewById(R.id.config_progress);
         tbPswFlag = (ToggleButton) findViewById(R.id.tbPswFlag);
     }
 
@@ -771,9 +755,7 @@ public class AtmelSmartConfig extends Activity implements View.OnClickListener, 
         public void onReceive(Context context, Intent intent) {
             final String action = intent.getAction();
             if (action.equals(WifiManager.SUPPLICANT_CONNECTION_CHANGE_ACTION)) {
-                if (intent.getBooleanExtra(WifiManager.EXTRA_SUPPLICANT_CONNECTED, false)) {
-
-                } else {
+                if (intent.getBooleanExtra(WifiManager.EXTRA_SUPPLICANT_CONNECTED, true)) {
                     mSSIDInputField.setText("");
                 }
             }
