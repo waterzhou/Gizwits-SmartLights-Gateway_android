@@ -92,7 +92,7 @@
     <integer name="min_level">1</integer>
     <!-- From: file:/F:/temp/Gizwits-SmartLights_Android-master/app/src/main/res/values/strings.xml -->
     <eat-comment/>
-    <string name="AddScene">If you love the effect of now, click me to save it</string>
+    <string name="AddScene">Save Scene</string>
     <string name="about">About</string>
     <string name="account_manage">Account Management</string>
     <string name="aircondition">空调</string>
@@ -242,6 +242,7 @@
     <string name="user_name">用户名</string>
     <string name="wifi_first">请先连上Wi-Fi网络</string>
     <string name="wifi_name">Wi-Fi名称</string>
+    <string name="zigbee_factory_reset">Zigbee factory reset</string>
     <!-- From: file:/F:/temp/Gizwits-SmartLights_Android-master/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="AppBaseTheme" parent="android:Theme.Light">
@@ -267,6 +268,11 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:background">@drawable/button_blue_long</item>
         <item name="android:textColor">@android:color/white</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
+    <style name="ButtonGrayNew">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_gravity">center_horizontal</item>
     </style>
     <style name="EditTextTheme" parent="NoMarginEditTextTheme">

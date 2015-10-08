@@ -48,15 +48,6 @@
                     android:text="@string/main_control_title"
                     android:textColor="@android:color/white"
                     android:textSize="22sp" />
-                <Button
-                    android:id="@+id/ifttt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/tvTitle"
-                    android:layout_marginRight="4dp"
-                    android:text="@string/iFttt"
-                    android:background="@drawable/btn_selector"
-                    android:textColor="@color/white" />
 
                 <ImageView
                     android:id="@+id/ivEdit"
@@ -66,7 +57,16 @@
                     android:layout_centerVertical="true"
                     android:layout_marginRight="10dp"
                     android:src="@drawable/icon_edit_w" />
-
+                <Button
+                    android:id="@+id/ifttt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tvTitle"
+                    android:layout_toLeftOf="@+id/ivEdit"
+                    android:layout_marginRight="4dp"
+                    android:text="@string/iFttt"
+                    android:background="@drawable/btn_selector"
+                    android:textColor="@color/white" />
                 <RelativeLayout
                     android:id="@+id/rlAlarmTips"
                     android:layout_width="wrap_content"
@@ -230,7 +230,7 @@
                             <com.gizwits.framework.control.TextMoveLayout
                                 android:id="@+id/textLayout2"
                                 android:layout_width="fill_parent"
-                                android:layout_marginTop="20dp"
+                                android:layout_marginTop="30dp"
                                 android:layout_height="40dp" />
                             <ImageView
                                 android:id="@+id/k"
@@ -246,7 +246,7 @@
                                 android:max="@integer/max_hue"
                                 android:layout_toLeftOf="@+id/l"
                                 android:layout_toRightOf="@+id/k"
-                                android:layout_marginBottom="4dp"
+                                android:layout_marginBottom="10dp"
                                 android:layout_marginLeft="6dp"
                                 android:layout_marginRight="6dp"
                                 android:progress="0" />
@@ -305,7 +305,6 @@
                                 android:textColorHint="@color/background_blue"
                                 android:textColor="@color/blue_text_color"
                                 android:paddingLeft="10dp"
-                                android:selectAllOnFocus="true"
                                 android:inputType="text"
                                 android:maxLength="8" />
                             <Button
@@ -315,7 +314,6 @@
                                 android:text="@string/AddScene"
                                 android:background="@drawable/btn_selector"
                                 android:layout_toRightOf="@+id/scene_name"
-                                android:layout_marginRight="5dp"
                                 android:layout_marginBottom="10dp"
                                 android:textColor="@color/white" />
                             <ListView

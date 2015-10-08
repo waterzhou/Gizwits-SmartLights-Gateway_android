@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#ffffcf22"
+    android:background="#090701"
     android:orientation="horizontal" >
 
     <TextView
@@ -12,7 +12,7 @@
         android:layout_weight="2"
         android:gravity="center_vertical"
         android:text="@string/title_about"
-        android:textColor="@android:color/holo_blue_dark"
+        android:textColor="@android:color/holo_green_light"
         android:layout_marginLeft="4dp"
         android:textSize="20sp" />
 
@@ -23,7 +23,7 @@
         android:layout_weight="2"
         android:gravity="center_vertical"
         android:text="@string/title_about"
-        android:textColor="@android:color/holo_blue_dark"
+        android:textColor="@android:color/holo_green_light"
         android:textSize="20sp" />
     <!--TextView
         android:id="@+id/sceneDetail"
@@ -40,7 +40,7 @@
         android:layout_height="fill_parent"
         android:onClick="buttonSceneOnClickHandler"
         android:text = "Apply"
-        android:textColor="@android:color/holo_blue_dark"
+        android:textColor="@android:color/holo_green_light"
         android:layout_alignParentLeft="true" />
     <ImageButton
         android:id="@+id/scene_remove"
